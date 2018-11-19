@@ -11,7 +11,7 @@ def grado_nuevo(request):
             for materia_id in request.POST.getlist('materias'):
                 asignacion= Asignacion(materia_id=materia_id, grado_id = grado.id)
                 asignacion.save()
-            messages.add_message(request, messages.SUCCESS, 'Grado Guardado Exitosamente')
+            messages.add_message(request, messages.SUCCESS, 'Grado guardado Exitosamente')
     else:
         formulario = GradoForm()
     return render(request, 'Cnotas/grado_editar.html', {'formulario': formulario})
